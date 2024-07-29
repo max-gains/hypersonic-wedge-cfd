@@ -76,10 +76,10 @@ def eval_job(row):
         file.write(str(out.stdout))
     print('Finished job ' + dir_name.split('/')[-1])
 
-with concurrent.futures.ProcessPoolExecutor(max_workers=N_CPUS) as executor:
-    results = list(executor.map(eval_job, data_rows))
+# with concurrent.futures.ProcessPoolExecutor(max_workers=N_CPUS) as executor:
+    # results = list(executor.map(eval_job, data_rows))
 
-# for row in data_rows: eval_job(row)
+for row in data_rows: eval_job(row)
 
 print("Done.")
 
