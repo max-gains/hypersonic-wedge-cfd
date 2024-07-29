@@ -62,7 +62,7 @@ def eval_job(row):
         vx = SOS * row['MACH'] * np.cos(np.deg2rad(row['AOA']))
         vy = SOS * row['MACH'] * np.sin(np.deg2rad(row['AOA']))
         contents = contents.replace('INP_VX', str(vx)[:8])
-        contents = contents.replace('INP_VY', str(vx)[:8])
+        contents = contents.replace('INP_VY', str(vy)[:8])
     with open(dir_name + '/flow_wedge.cfg', 'w') as file:
         file.write(contents)
     with open('solid_wedge_base.cfg', 'r') as file:
